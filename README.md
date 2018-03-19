@@ -1,6 +1,6 @@
 # WeatheR
 
-Here is a very rough suite of functions to visualise data from our OS Anywhere Weather Kit (home weather stations). More information about this type of weather station can be found [here](http://store.oregonscientific.com/us/anywhere-weather-kit.html)
+Here is a very rough suite of functions to visualise data from our OS Anywhere Weather Kit (home weather station). More information about this type of weather station can be found [here](http://store.oregonscientific.com/us/anywhere-weather-kit.html).
 
 ## Getting Started
 
