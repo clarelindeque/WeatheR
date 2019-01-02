@@ -1,5 +1,12 @@
-require(lubridate)
-
+#' Title
+#'
+#' @param data 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' @import lubridate
 prepareData <- function(data){
   myData <- data
   myData$utc <- strptime(myData$utc, format="%FT%T", tz="")
