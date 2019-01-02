@@ -1,5 +1,3 @@
-# Load required libraries
-
 library(ggplot2)
 library(reshape)
 library(lubridate)
@@ -8,8 +6,8 @@ library(openair)
 library(scales)
 library(grid)
 library(extrafont)
-
-source('prepareData.R')
+library(plyr)
+library(WeatheR)
 
 loadfonts()
 
