@@ -7,10 +7,11 @@
 #'
 #' @examples
 #' @import lubridate
+#' @import dplyr
 prepareData <- function(data){
   myData <- data
-  myData$utc <- strptime(myData$utc, format="%FT%T", tz="")
-  myData$date <- strptime(myData$date, format="%d/%m/%Y", tz="")
+  myData$utc <- strptime(myData$utc, format="%FT%T", tz="") %>% as.POSIXct()
+  myData$date <- strptime(myData$date, format="%d/%m/%Y", tz="") %>% as.POSIXct()
   # Add on months
   myData <- cbind(myData, months(myData$date))
   colnames(myData)[ncol(myData)] <- "month"
