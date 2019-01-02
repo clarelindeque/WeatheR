@@ -9,6 +9,12 @@ prepareData(data)
 \arguments{
 \item{data}{}
 }
+\value{
+A data frame.
+}
 \description{
 Title
+}
+\examples{
+prepareData(read.csv(file="wind-data.csv"))
 }

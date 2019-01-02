@@ -2,10 +2,11 @@
 #'
 #' @param data 
 #'
-#' @return
+#' @return A data frame.
 #' @export
 #'
 #' @examples
+#' prepareData(read.csv(file="wind-data.csv"))
 #' @import lubridate
 #' @import dplyr
 prepareData <- function(data){
@@ -35,5 +36,5 @@ prepareData <- function(data){
   colnames(myData)[ncol(myData)] <- "season"
   myData$season <- factor(myData$season, levels = c("Summer", "Autumn", "Winter", "Spring"))
   
-  prepareData <- myData
+  myData
 }
