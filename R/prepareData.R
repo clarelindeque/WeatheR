@@ -1,9 +1,18 @@
-require(lubridate)
-
+#' Title
+#'
+#' @param data 
+#'
+#' @return A data frame.
+#' @export
+#'
+#' @examples
+#' prepareData(read.csv(file="wind-data.csv"))
+#' @import lubridate
+#' @import dplyr
 prepareData <- function(data){
   myData <- data
-  myData$utc <- strptime(myData$utc, format="%FT%T", tz="")
-  myData$date <- strptime(myData$date, format="%d/%m/%Y", tz="")
+  myData$utc <- strptime(myData$utc, format="%FT%T", tz="") %>% as.POSIXct()
+  myData$date <- strptime(myData$date, format="%d/%m/%Y", tz="") %>% as.POSIXct()
   # Add on months
   myData <- cbind(myData, months(myData$date))
   colnames(myData)[ncol(myData)] <- "month"
@@ -27,5 +36,5 @@ prepareData <- function(data){
   colnames(myData)[ncol(myData)] <- "season"
   myData$season <- factor(myData$season, levels = c("Summer", "Autumn", "Winter", "Spring"))
   
-  prepareData <- myData
+  myData
 }
